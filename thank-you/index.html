@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you — Agents of Conservation</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    @font-face {
+      font-family: 'GeistMono';
+      src: url('/assets/fonts/GeistMono-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'GeistMono';
+      src: url('/assets/fonts/GeistMono-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Geist';
+      src: url('/assets/fonts/Geist-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --color-bg: #2e2e2e;
+      --color-text: #f5f0e8;
+      --color-text-muted: #a09888;
+      --font-mono: 'GeistMono', monospace;
+      --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: clamp(2em, 5vw, 3.5em);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: clamp(1em, 2vw, 1.25em);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      max-width: 30ch;
+      margin-bottom: 2em;
+    }
+
+    a {
+      font-family: var(--font-mono);
+      font-size: 0.8125em;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      text-decoration: none;
+      padding: 0.9em 3em;
+      border: 1px solid rgba(245, 240, 232, 0.1);
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    a:hover {
+      border-color: var(--color-text);
+      background: rgba(245, 240, 232, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank you.</h1>
+  <p>I'll be in touch soon.</p>
+  <a href="/">Back to site</a>
+</body>
+</html>

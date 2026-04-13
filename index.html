@@ -705,6 +705,15 @@
       transition: border-color 0.4s var(--ease-out-quart);
     }
 
+    .contact-form__input:-webkit-autofill,
+    .contact-form__input:-webkit-autofill:hover,
+    .contact-form__input:-webkit-autofill:focus,
+    .contact-form__textarea:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px var(--color-bg) inset;
+      -webkit-text-fill-color: var(--color-text);
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
     .contact-form__input::placeholder,
     .contact-form__textarea::placeholder {
       color: var(--color-text-muted);
@@ -910,7 +919,7 @@
         <h2 class="cta__heading" data-reveal>Reach out.</h2>
         <p class="cta__text" data-reveal>I'd love to hear from you — whether it's a subject you'd like me to post on or a project at your company you want to discuss.</p>
         <div id="reach-out-form" class="contact-form" data-reveal style="margin-top: 3em; scroll-margin-top: 6em;">
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
             <input type="hidden" name="form-name" value="contact">
             <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
             <div class="contact-form__group">
