@@ -799,6 +799,34 @@
         gap: 0.5em;
         text-align: center;
       }
+
+      /* ---- Mobile Scroll Snap ---- */
+
+      html, body {
+        scroll-snap-type: y mandatory;
+      }
+
+      .hero {
+        scroll-snap-align: start;
+      }
+
+      .section,
+      .band,
+      .cta {
+        scroll-snap-align: start;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .band {
+        align-items: center;
+      }
+
+      .footer {
+        scroll-snap-align: end;
+      }
     }
   </style>
 </head>
@@ -836,24 +864,13 @@
     <section class="hero">
       <h1 class="hero__heading" data-reveal>Learn AI tools.<em> Stay human.</em></h1>
       <p class="hero__sub" data-reveal>No hype, no jargon, no ego.</p>
-      <div class="social-rail" data-reveal>
-        <a href="https://www.linkedin.com/in/mathewwendell/" target="_blank" rel="noopener noreferrer" class="social-rail__link" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://agentsofconservation.substack.com/" target="_blank" rel="noopener noreferrer" class="social-rail__link" aria-label="Substack">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:1em;height:1em"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@AgentsofConservation" target="_blank" rel="noopener noreferrer" class="social-rail__link" aria-label="YouTube">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-        </a>
-      </div>
     </section>
 
     <!-- About / Mission -->
     <section class="section section--center">
       <div class="container">
         <h2 class="section__heading" data-reveal>A resource to understand <br>the technology.</h2>
-        <p class="section__body" data-reveal>Most people have tried or are using AI. Yet many are at a loss on how to improve it or how to build agents to help them with their work. Yet the technology isn't slowing down, and there can be a feeling of falling behind.</p>
+        <p class="section__body" data-reveal>Most people are using AI, or at least have tried. Yet many are searching for answers on how to improve it, or even build agents to help them with their work. And because the technology is not slowing down, there can be a feeling of falling behind.</p>
       </div>
     </section>
 
@@ -866,7 +883,7 @@
     <section id="learn" class="section" style="scroll-margin-top: 4em;">
       <div class="container">
         <h2 class="section__heading" data-reveal>What I share in my posts.</h2>
-        <p class="section__body" data-reveal style="margin-bottom: 3em;">Everything I post comes from how I'm learning to use AI at Universal Agents — lessons learned, shared openly so everyone can come along the journey. Check out my <a href="https://agentsofconservation.substack.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Substack</a> where I write on these three topics.</p>
+        <p class="section__body" data-reveal style="margin-bottom: 3em;">Everything I share comes from my work <a href="https://universalagents.ai" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Universal Agents</a>. Check out my <a href="https://agentsofconservation.substack.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Substack</a> where I write on these topics below.</p>
         <div class="cards" data-reveal data-reveal-stagger=".card">
           <div class="card">
             <h3 class="card__title">The basics</h3>
@@ -890,9 +907,9 @@
         <div class="split" data-reveal>
           <div>
             <h2 class="section__heading">Mathew Wendell.</h2>
-            <p class="section__body">Early in my career, I worked at agencies and evolved into experience strategy and ultimately consulting. I was a partner at IBM and have been part of multiple startups. For the last two years, I've been building AI technology at Universal Agents. Agents of Conservation is where I share what I'm learning.</p>
+            <p class="section__body">Early in my career, I worked at agencies then shifted to product management. This led me to consulting where I was a partner at IBM. I also have been part of startups, where the last two years I've been building AI technology at Universal Agents. Agents of Conservation is where I share what I'm learning.</p>
           </div>
-          <div style="border-radius: 0.5em; overflow: hidden; max-width: 65%; margin: 0 auto;">
+          <div style="border-radius: 0.5em; overflow: hidden; max-width: 45%; margin: 0 auto;">
             <img src="assets/images/about-image.png" alt="Mathew Wendell" style="width: 100%; height: auto; filter: grayscale(1);">
           </div>
         </div>
@@ -909,15 +926,15 @@
         <div class="features" data-reveal data-reveal-stagger=".feature">
           <div class="feature">
             <h3 class="feature__title">If it seems untrue, it probably is.</h3>
-            <p class="feature__text">If you don't know how these tools work, you can't know when they're wrong. And they're wrong a lot.</p>
+            <p class="feature__text">If you don't know how these tools work, you can't know when they're wrong. And they're often wrong.</p>
           </div>
           <div class="feature">
             <h3 class="feature__title">Be specific.</h3>
-            <p class="feature__text">Be really clear on your outcome. Give it good inputs and don't worry about telling it how to get there.</p>
+            <p class="feature__text">Be really clear on your outcome. Provide quality inputs and don't worry about telling it how to get there.</p>
           </div>
           <div class="feature">
             <h3 class="feature__title">Stay sovereign.</h3>
-            <p class="feature__text">I can't emphasize this enough. If you let the technology do the thinking, it will, and your critical thinking will slowly atrophy.</p>
+            <p class="feature__text">I can't emphasize this enough - if you let the technology do the thinking, it will. And your critical thinking will slowly atrophy.</p>
           </div>
           <div class="feature">
             <h3 class="feature__title">Do more human things.</h3>
@@ -931,7 +948,7 @@
     <section id="reach-out" class="cta" style="scroll-margin-top: 4em;">
       <div class="container">
         <h2 class="cta__heading" data-reveal>Reach out.</h2>
-        <p class="cta__text" data-reveal>I'd love to hear from you — whether it's a subject you'd like me to post on or a project at your company you want to discuss.</p>
+        <p class="cta__text" data-reveal>I'd love to hear from you — whether it's a subject you'd like me to post on or a project you want to discuss.</p>
         <div id="reach-out-form" class="contact-form" data-reveal style="margin-top: 3em; scroll-margin-top: 6em;">
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
             <input type="hidden" name="form-name" value="contact">
@@ -943,7 +960,7 @@
               <input type="email" id="email" name="email" placeholder="your@email.com" required class="contact-form__input">
             </div>
             <div class="contact-form__group">
-              <textarea id="message" name="message" placeholder="How can I help?" required class="contact-form__textarea"></textarea>
+              <input type="text" id="message" name="message" placeholder="How can I help?" required class="contact-form__input">
             </div>
             <button type="submit" class="contact-form__btn">Send message</button>
           </form>
@@ -1035,11 +1052,14 @@
     function boot() {
       gsap.registerPlugin(ScrollTrigger);
 
-      /* ---- Lenis Smooth Scroll ---- */
-      const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
+      /* ---- Lenis Smooth Scroll (desktop only — conflicts with mobile snap) ---- */
+      const isMobile = window.matchMedia('(max-width: 767px)').matches;
+      if (!isMobile) {
+        const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      }
 
       /* ---- Scroll Reveal ---- */
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
