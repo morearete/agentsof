@@ -903,14 +903,14 @@
 
     <!-- Accent Band -->
     <div class="band">
-      <p class="band__text" data-reveal>Be empowered.<br><span>Free yourself to do more human things.</span></p>
+      <p class="band__text" data-reveal>Empower<br>yourself<br><span>through</span><br><span>learning</span></p>
     </div>
 
     <!-- Learn / Cards -->
     <section id="learn" class="section" style="scroll-margin-top: 4em;">
       <div class="container">
         <h2 class="section__heading" data-reveal>What I share in my posts.</h2>
-        <p class="section__body" data-reveal style="margin-bottom: 3em;">Everything I share comes from daily work at <a href="https://universalagents.ai" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Universal Agents</a> and a belief that understanding AI matters more than just using it. I use <a href="https://agentsofconservation.substack.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Substack</a> to share on these topics below.</p>
+        <p class="section__body" data-reveal style="margin-bottom: 3em;">My substack posts stem from my daily work at Universal Agents and a belief that understanding AI matters more than just using it. I'll offer insights across the categories below.</p>
         <div class="cards" data-reveal data-reveal-stagger=".card">
           <div class="card">
             <h3 class="card__title">Getting started</h3>
@@ -934,7 +934,7 @@
         <div class="split" data-reveal>
           <div>
             <h2 class="section__heading">Mathew Wendell.</h2>
-            <p class="section__body">Early in my career, I worked at agencies then shifted to product management. This led me to consulting where I was a partner at IBM. I also have been part of startups, where the last two years I've been building AI technology at Universal Agents. Agents of Conservation is where I share what I'm learning.</p>
+            <p class="section__body">Early in my career, I worked at agencies before shifting to product management. This led me to consulting where I was a partner at IBM. Over the last two years I've been building AI technology at <a href="https://universalagents.ai" target="_blank" rel="noopener">Universal Agents</a>. Agents of Conservation is where I am sharing my learnings. And what are we conserving? Our human agency. We can only do that by understanding this technology.</p>
           </div>
           <div style="border-radius: 0.5em; overflow: hidden; max-width: 45%; margin: 0 auto;">
             <img src="assets/images/about-image.png" alt="Mathew Wendell" style="width: 100%; height: auto; filter: grayscale(1);">
@@ -952,19 +952,19 @@
         </div>
         <div class="features" data-reveal data-reveal-stagger=".feature">
           <div class="feature">
-            <h3 class="feature__title">If it seems untrue, it probably is.</h3>
+            <h3 class="feature__title">1— If it seems untrue, it probably is.</h3>
             <p class="feature__text">If you don't know how these tools work, you can't know when they're wrong. And they're often wrong.</p>
           </div>
           <div class="feature">
-            <h3 class="feature__title">Be specific.</h3>
+            <h3 class="feature__title">2— Be specific.</h3>
             <p class="feature__text">Be really clear on your outcome. Provide quality inputs and don't worry about telling it how to get there.</p>
           </div>
           <div class="feature">
-            <h3 class="feature__title">Stay sovereign.</h3>
+            <h3 class="feature__title">3— Stay sovereign.</h3>
             <p class="feature__text">I can't emphasize this enough - if you let the technology do the thinking, it will. And your critical thinking will slowly atrophy.</p>
           </div>
           <div class="feature">
-            <h3 class="feature__title">Do more human things.</h3>
+            <h3 class="feature__title">4— Do more human things.</h3>
             <p class="feature__text">Let AI handle the noise and the mundane. That frees you to use your intuition on the problems that actually need solving.</p>
           </div>
         </div>
@@ -1079,11 +1079,14 @@
     function boot() {
       gsap.registerPlugin(ScrollTrigger);
 
-      /* ---- Lenis Smooth Scroll ---- */
-      const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
+      /* ---- Lenis Smooth Scroll (desktop only) ---- */
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      if (!isTouchDevice) {
+        const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => lenis.raf(time * 1000));
+        gsap.ticker.lagSmoothing(0);
+      }
 
       /* ---- Scroll Reveal ---- */
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
