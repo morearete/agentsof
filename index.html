@@ -833,32 +833,26 @@
         text-align: center;
       }
 
-      /* ---- Mobile Scroll Snap ---- */
-
-      html, body {
-        scroll-snap-type: y mandatory;
-      }
-
-      .hero {
-        scroll-snap-align: start;
-      }
-
-      .section,
-      .band,
-      .cta {
-        scroll-snap-align: start;
-        min-height: 100dvh;
+      .section--center {
+        min-height: 50dvh;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
       .band {
+        min-height: 50dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
       }
 
-      .footer {
-        scroll-snap-align: end;
+      .cta {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   </style>
@@ -916,19 +910,19 @@
     <section id="learn" class="section" style="scroll-margin-top: 4em;">
       <div class="container">
         <h2 class="section__heading" data-reveal>What I share in my posts.</h2>
-        <p class="section__body" data-reveal style="margin-bottom: 3em;">Everything I share comes from my work <a href="https://universalagents.ai" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Universal Agents</a>. Check out my <a href="https://agentsofconservation.substack.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Substack</a> where I write on these topics below.</p>
+        <p class="section__body" data-reveal style="margin-bottom: 3em;">Everything I share comes from daily work at <a href="https://universalagents.ai" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Universal Agents</a> and a belief that understanding AI matters more than just using it. I use <a href="https://agentsofconservation.substack.com/" target="_blank" rel="noopener noreferrer" style="color: var(--color-text); text-decoration: underline;">Substack</a> to share on these topics below.</p>
         <div class="cards" data-reveal data-reveal-stagger=".card">
           <div class="card">
-            <h3 class="card__title">The basics</h3>
-            <p class="card__text">Fundamentals that people forget or never learned. I still rely on these every day, and they apply to everyone — no matter what model you use.</p>
+            <h3 class="card__title">Getting started</h3>
+            <p class="card__text">You don't need to be technical to use AI well. I cover why it matters, how to get started, how to protect yourself, and how to cut through the noise.</p>
           </div>
           <div class="card">
             <h3 class="card__title">What matters now</h3>
-            <p class="card__text">AI moves fast and most of the noise is hype. I share what's actually worth paying attention to and what you can safely ignore.</p>
+            <p class="card__text">AI moves fast and most of the noise is hype. I share what's actually changing, which tools are worth your time, and what you can safely ignore.</p>
           </div>
           <div class="card">
-            <h3 class="card__title">Building agents</h3>
-            <p class="card__text">The tools and agents I build to handle specific tasks at work. How they're made, why they help, and how you can build your own.</p>
+            <h3 class="card__title">Building with AI</h3>
+            <p class="card__text">The tools and agents I build to handle real tasks at work. How they're made, why they help, and how you can start building your own.</p>
           </div>
         </div>
       </div>
@@ -1085,14 +1079,11 @@
     function boot() {
       gsap.registerPlugin(ScrollTrigger);
 
-      /* ---- Lenis Smooth Scroll (desktop only — conflicts with mobile snap) ---- */
-      const isMobile = window.matchMedia('(max-width: 767px)').matches;
-      if (!isMobile) {
-        const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((time) => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
-      }
+      /* ---- Lenis Smooth Scroll ---- */
+      const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
 
       /* ---- Scroll Reveal ---- */
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
